@@ -8,7 +8,7 @@ var gulp								= require('gulp'),
 		sourcemaps 					= require('gulp-sourcemaps'),
 		uglify							= require('gulp-uglify'),
 		staticPath 					= 'src/',
-		publicStaticPath		= 'public/',
+		publicStaticPath		= 'src/public/',
 		ngAnnotate 					= require('gulp-ng-annotate'),
 		browserSync         = require('browser-sync'),
 		jshint              = require("gulp-jshint"),
@@ -25,7 +25,7 @@ var gulp								= require('gulp'),
 				.pipe(rename('app.min.js'))
 		    .pipe(gulp.dest(publicStaticPath + 'js/'))
 				.pipe(browserSync.reload({stream: true}));
-		})
+		});
 
 
 // Proceso para minificar librerias y vendorjs
@@ -36,7 +36,7 @@ var gulp								= require('gulp'),
 		      .pipe(uglify())
 		    .pipe(gulp.dest(publicStaticPath + 'js/'))
 				.pipe(browserSync.reload({stream: true}));
-		})
+		});
 
 
 // Proceso de compilacion de archivos stylus
@@ -44,17 +44,24 @@ gulp.task('css', function() {
 	gulp.src( staticPath + 'stylus/main.styl' )
 		.pipe(stylus({
 			use: nib(),
-			compress: true
+			compress: false
 		}))
 		.pipe(rename('main.min.css'))
 		.pipe(gulp.dest( publicStaticPath + 'css/'))
 		.pipe(browserSync.reload({stream: true}));
 });
 
+// Proceso de compilacion de archivos stylus
+gulp.task('html', function() {
+	gulp.src( staticPath + '/*.html' )
+	.pipe(browserSync.reload({stream: true}));
+});
+
+
 /*
 * Browser Sync task
 */
-gulp.task('browser-sync', ['css', 'js', 'vendorjs'], function () {
+gulp.task('browser-sync', ['css', 'js', 'vendorjs','html'], function () {
   browserSync({
     server: {
       baseDir: index
@@ -68,6 +75,7 @@ gulp.task('watch', function() {
 	gulp.watch([staticPath + '/stylus/**/*.styl'], ['css']);
   gulp.watch([staticPath + '/js/ventor/**/*.js'], ['vendorjs']);
 	gulp.watch([staticPath + '/js/app/**/*.js'], ['js']);
+	gulp.watch([staticPath + '/**/*.html'], ['html']);
 });
 
 gulp.task('default', [ 'browser-sync','watch' ]);
