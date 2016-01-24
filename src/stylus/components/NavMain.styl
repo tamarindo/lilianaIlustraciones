@@ -1,0 +1,32 @@
+.NavMain
+  &-item
+    display: inline
+    padding: 0 10px
+    vertical-align: middle
+    a
+      color: white
+      line-height: 35px
+      text-decoration: blink
+
+  &-link
+    cursor: pointer
+
+  &-list
+    background: rebeccapurple
+    height: 35px
+    line-height: 28px
+    list-style: none
+    text-align: center
+
+
+  @media (min-width: $screen-tablet)
+    &-item
+      display: block
+      text-align: left
+
+    &-list
+      height: auto
+      left: 0
+      list-style: none
+      position: absolute
+      top: 20%

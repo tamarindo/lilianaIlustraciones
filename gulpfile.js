@@ -30,10 +30,10 @@ var gulp								= require('gulp'),
 
 // Proceso para minificar librerias y vendorjs
 		gulp.task('vendorjs', function () {
-		  gulp.src([ staticPath + 'js/ventor/**/*.js'])
-		      .pipe(concat('app.js'))
-		      .pipe(ngAnnotate())
-		      .pipe(uglify())
+		  gulp.src([ staticPath + 'js/vendor/*.min.js'])
+		  	.pipe(concat('vendor.js'))
+		  	.pipe(uglify())
+				.pipe(rename('vendor.min.js'))
 		    .pipe(gulp.dest(publicStaticPath + 'js/'))
 				.pipe(browserSync.reload({stream: true}));
 		});
