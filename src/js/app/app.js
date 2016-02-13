@@ -1,4 +1,4 @@
 (function(){
   'use strict';
-    var app = angular.module('app', ['slider']);
+    var app = angular.module('myApp', []);
 }());
