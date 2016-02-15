@@ -1,3 +1,5 @@
+
+
 .box
   overflow hidden
   padding-top: 2em
@@ -10,7 +12,10 @@
     float: left
     color: #848484
     clear: both
-
+  &-tamaño
+    display:none
+  &-tecnicas
+    display:none
   @media (max-width: 42em)
     &-resColTwo
       .Card
@@ -27,12 +32,18 @@
 
 .Card
   &-text
-    text-align: center
-    display: block
-    width: 100%
+    position: absolute;
+    margin-top: -23px;
+    left: 0;
+    display: block;
     height: 19px;
     overflow: hidden;
-
+    margin-left: 10px;
+    font-size: 11px;
+    color: white;
+    text-shadow: -1px 1px 1px #2F2F2F;
+  &-content
+    position: relative
   &-img
     width: 100%
   &-picture

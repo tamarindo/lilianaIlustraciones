@@ -1,6 +1,10 @@
 .Slider
   background: $fondoBanckgroundSlider
   height: 450px
+
+  &-content
+    padding-top: 35px;
+
   &-item
     img
       display: none
@@ -10,7 +14,9 @@
   &-item:first-child
     img
       display: block
-
+  @media (min-width: $screen-tablet)
+    &-content
+      padding-top: 0px;
 .slick
   &-dots
     list-style: none;
