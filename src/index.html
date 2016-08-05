@@ -9,7 +9,7 @@
     <title>Ilustraciones liliana</title>
     <!-- css link -->
     <link rel="stylesheet" href="public/css/main.min.css" media="screen"  charset="utf-8">
-
+    <link rel="stylesheet" href="public/css/vendor.css" media="screen"  charset="utf-8">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css"/>
     <!-- inicial JS -->
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -23,10 +23,20 @@
       <div class="topHeader">
         <h1>LB</h1>
       </div>
-
-      <div slider  class="Slider" >
+      <div class="NavMain">
+        <nav class="NavMain-conten">
+          <ul class="NavMain-list">
+            <li class="NavMain-item"><a class="NavMain-link" href="#">Inicio</a></li>
+            <li class="NavMain-item"><a class="NavMain-link" href="#Nosotros">Nosotros</a></li>
+            <li class="NavMain-item"><a class="NavMain-link" href="#galerias">Ilustraciones</a></li>
+            <li class="NavMain-item"><a class="NavMain-link" href="#compra">Compra</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div slider  class="Slider">
         <div class="Slider-content">
           <div class="Slider-galery">
+            <div class="Slider-item"><img src="public/img/gato2.png"></div>
             <div class="Slider-item"><img src="public/img/tama.jpg"></div>
             <div class="Slider-item"><img src="public/img/pajaro.jpg"></div>
             <div class="Slider-item"><img src="public/img/pajaroBlue.jpg"></div>
@@ -34,41 +44,8 @@
           </div>
         </div>
       </div>
-
-      <div class="NavMain">
-        <nav class="NavMain-conten">
-          <ul class="NavMain-list">
-            <li class="NavMain-item"><a class="NavMain-link" href="#">Inicio</a></li>
-            <li class="NavMain-item"><a class="NavMain-link" href="#">Nosotros</a></li>
-            <li class="NavMain-item"><a class="NavMain-link" href="#">Ilustraciones</a></li>
-            <li class="NavMain-item"><a class="NavMain-link" href="#">Galerias</a></li>
-            <li class="NavMain-item"><a class="NavMain-link" href="#">Compra</a></li>
-          </ul>
-        </nav>
-      </div>
     </header>
-
-    <section id="Nosotros" class="box container">
-      <div class="column ">
-        <h3>Liliana Ilustraciones</h3>
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        </p>
-      </div>
-      <div class="column  right right-text">
-        <h3>Liliana Bernal</h3>
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        </p>
-      </div>
-
-      <p class="Cita center-text"> " Una Imagen dice mas que mil Palabras." <span>Anonimo</span> </p>
-    </section>
-
+   <!--
     <section id="ilustraciones" class="box container">
       <div class="box-ilustraciones box-resColTwo">
       <h3>Ilustraciones</h3>
@@ -171,7 +148,45 @@
       </div>
     </section>
 
-    <section id="galerias" class="box container">
+   -->
+   <p class="Cita center-text"> " Una Imagen dice mas que mil Palabras." <span>Anonimo</span> </p>
+  <section id="Nosotros" class="box ">
+
+    <div class="container">
+      <div class="column ">
+        <h3>Liliana Ilustraciones</h3>
+        <p>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        </p>
+      </div>
+      <div class="column  right right-text">
+        <h3>Liliana Bernal</h3>
+        <p>
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        </p>
+      </div>
+
+      <div class="column  right right-text">
+        <h3>Quieres una ilustracion ?</h3>
+        <p>
+          Quiere Una de estas ilustraciones o aun mejor quieres que ilustre a tu mascota o alguien que
+          sea significante para ti, solo contactamen por formulario para que nos pongamos en contacto.
+        </p>
+        <p>
+        <p>
+      </div>
+
+
+
+    </div>
+  </section>
+
+    <section modal-galery id="galerias" class="box ">
+      <div class="container">
       <div class="box-ilustraciones box-resColTwo">
         <h3>Galeria</h3>
         <div class="Card column fourth">
@@ -238,53 +253,36 @@
             <span class="Card-text" > Flores </span>
           </div>
         </div>
-        <div class="Card column fourth">
-          <div class="Card-content">
-            <div>
-              <img class="Card-img" src="public/img/pajaro.jpg" alt="">
-            </div>
-            <span class="Card-text" > Pajaros </span>
-          </div>
-        </div>
-        <div class="Card column fourth">
-          <div class="Card-content">
-            <div class="Card-picture">
-              <img class="Card-img" src="public/img/pajaro.jpg" alt="">
-            </div>
-            <span class="Card-text" > Flores </span>
-          </div>
-        </div>
-        <div class="Card column fourth">
-          <div class="Card-content">
-            <div>
-              <img class="Card-img" src="public/img/pajaro.jpg" alt="">
-            </div>
-            <span class="Card-text" > Pajaros </span>
-          </div>
-        </div>
-        <div class="Card column fourth">
-          <div class="Card-content">
-            <div class="Card-picture">
-              <img class="Card-img" src="public/img/pajaro.jpg" alt="">
-            </div>
-            <span class="Card-text" > Flores </span>
-          </div>
-        </div>
       </div>
+      </div>
+
     </section>
 
-    <section id="Compra"  class="box container">
-      <h3>contactanos o realiza un pedido</h3>
-      <form class="fromOrder">
-        <p class="fromOrder-inputContent"> <label>Nombre: </label> <input type="text"></p>
-        <p class="fromOrder-inputContent"> <label>Correo: </label> <input type="email"></p>
-        <p class="fromOrder-inputContent"> <label>Asunto: </label> <input type="text"></p>
-        <p class="fromOrder-inputContent"> <label>Telefono:</label>
-          <input type="text"></p>
-        <p><textarea name="" id="" cols="30" rows="10"></textarea><p>
-        <p class="fromOrder-inputContent fromOrder-inputContent--submit"><input type="submit"></p>
+    <section id="compra" class="fromOrder"  class="box ">
+      <div class="container">
+        <div class="fromOrder-container">
+        <h3>contactanos o realiza un pedido</h3>
+        <form >
+          <p class="fromOrder-inputContent"> <label>Nombre: </label> <input type="text"></p>
+          <p class="fromOrder-inputContent"> <label>Correo: </label> <input type="email"></p>
+          <p class="fromOrder-inputContent"> <label>Asunto: </label> <input type="text"></p>
+          <p class="fromOrder-inputContent"> <label>Telefono:</label>
+            <input type="text"></p>
+          <p><textarea name="" id="" cols="30" rows="10"></textarea><p>
+          <p class="fromOrder-inputContent fromOrder-inputContent--submit"><input type="submit"></p>
 
-      </form>
+        </form>
+      </div>
+        <div class="fromOrder-msnAux">
+          <div class="sliderMin">
+            <div class="sliderMin"><img src="public/img/tama.jpg"></div>
+            <div class="sliderMin"><img src="public/img/tama.jpg"></div>
+            <div class="sliderMin"><img src="public/img/tama.jpg"></div>
+            <div class="sliderMin"><img src="public/img/tama.jpg"></div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
     <footer class="contact">
@@ -295,12 +293,25 @@
         <p> Bogota,Colombia </p>
       </div>
       <div class="contact-rs right">
-        <div class="contact-resItem"><img></div>
-        <div class="contact-resItem"><img></div>
-        <div class="contact-resItem"><img></div>
+        <div class="contact-resItem"><img src="public/img/fb.png"></div>
+        <div class="contact-resItem"><img src="public/img/instagram.png"></div>
+        <div class="contact-resItem"><img src="public/img/P.png"></div>
       </div>
       <p class="contact-derechos"> Laura Ilustraciones Derechos reservados </p>
     </footer>
 
+
+  <div class="modalGalery">
+    <div class="modalGalery-fondo"></div>
+    <div class="box modalGalery-container">
+      <div class="modalGalery-modal">
+        <div class="modalGalery-header">
+          <div class="modalGalery-close"> X </div>
+        </div>
+        <div class="modalGalery-body">
+        </div>
+      </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,22 +1,30 @@
 
 
 .topHeader
-  margin: 0 auto
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
 
   h1
+    width: 100%
     text-align: center
+    color: white
+    background: $principalColor
+    font-size:23px
+    position:relative
+    z-index:2
+    font-family: cursive;
+    line-height: 50px;
+    margin : 0
+    border-radius:0px
+
+  @media (min-width: $screen-tablet)
     width: 50px
     height: 50px
     padding: 4px
     left: 25px
     top: 25px
-    border-radius:30px
-    color: white
-    background: $principalColor
-    font-size:15px
-    position:absolute
-    z-index:2
-    font-family: cursive;
-
-  @media (min-width: $screen-tablet)
-    position: fixed
+    h1
+      border-radius:30px    

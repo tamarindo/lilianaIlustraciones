@@ -13,6 +13,14 @@
           fade: true,
           cssEase: 'linear'
         });
+        $('.sliderMin').slick({
+          dots: false,
+          infinite: true,
+          speed: 600,
+          arrows: false,
+          fade: true,
+          cssEase: 'linear'
+        });
       }
     };
   }]);

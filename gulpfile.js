@@ -32,15 +32,22 @@ var gulp								= require('gulp'),
 		gulp.task('vendorjs', function () {
 		  gulp.src([ staticPath + 'js/vendor/*.min.js'])
 		  	.pipe(concat('vendor.js'))
-		  	.pipe(uglify())
 				.pipe(rename('vendor.min.js'))
 		    .pipe(gulp.dest(publicStaticPath + 'js/'))
 				.pipe(browserSync.reload({stream: true}));
 		});
 
+// Proceso para minificar librerias y vendorcss
+	gulp.task('vendorcss', function () {
+	  gulp.src([ staticPath + '/css/**/*.css'])
+	  	.pipe(concat('vendor.css'))
+	    .pipe(gulp.dest(publicStaticPath + 'css/'))
+			.pipe(browserSync.reload({stream: true}));
+	});
+
 
 // Proceso de compilacion de archivos stylus
-gulp.task('css', function() {
+gulp.task('stylus', function() {
 	gulp.src( staticPath + 'stylus/main.styl' )
 		.pipe(stylus({
 			use: nib(),
@@ -61,7 +68,7 @@ gulp.task('html', function() {
 /*
 * Browser Sync task
 */
-gulp.task('browser-sync', ['css', 'js', 'vendorjs','html'], function () {
+gulp.task('browser-sync', ['stylus', 'js', 'vendorjs','vendorcss','html'], function () {
   browserSync({
     server: {
       baseDir: index
@@ -72,7 +79,8 @@ gulp.task('browser-sync', ['css', 'js', 'vendorjs','html'], function () {
 
 // Escuchando Cambios
 gulp.task('watch', function() {
-	gulp.watch([staticPath + '/stylus/**/*.styl'], ['css']);
+	gulp.watch([staticPath + '/stylus/**/*.styl'], ['stylus']);
+	gulp.watch([staticPath + '/css/**/*.css'], ['vendorcss']);
   gulp.watch([staticPath + '/js/ventor/**/*.js'], ['vendorjs']);
 	gulp.watch([staticPath + '/js/app/**/*.js'], ['js']);
 	gulp.watch([staticPath + '/**/*.html'], ['html']);
