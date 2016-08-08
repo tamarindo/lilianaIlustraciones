@@ -58,6 +58,17 @@ gulp.task('stylus', function() {
 		.pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('stylus-lanstatic', function() {
+	gulp.src( staticPath + 'stylus/lanpage.styl' )
+		.pipe(stylus({
+			use: nib(),
+			compress: false
+		}))
+		.pipe(rename('lanpage.min.css'))
+		.pipe(gulp.dest( publicStaticPath + 'css/'))
+		.pipe(browserSync.reload({stream: true}));
+});
+
 // Proceso de compilacion de archivos stylus
 gulp.task('html', function() {
 	gulp.src( staticPath + '/*.html' )
@@ -68,7 +79,7 @@ gulp.task('html', function() {
 /*
 * Browser Sync task
 */
-gulp.task('browser-sync', ['stylus', 'js', 'vendorjs','vendorcss','html'], function () {
+gulp.task('browser-sync', ['stylus','stylus-lanstatic', 'js', 'vendorjs','vendorcss','html'], function () {
   browserSync({
     server: {
       baseDir: index
@@ -80,6 +91,7 @@ gulp.task('browser-sync', ['stylus', 'js', 'vendorjs','vendorcss','html'], funct
 // Escuchando Cambios
 gulp.task('watch', function() {
 	gulp.watch([staticPath + '/stylus/**/*.styl'], ['stylus']);
+	gulp.watch([staticPath + '/stylus/lanpage.styl'], ['stylus-lanstatic']);
 	gulp.watch([staticPath + '/css/**/*.css'], ['vendorcss']);
   gulp.watch([staticPath + '/js/ventor/**/*.js'], ['vendorjs']);
 	gulp.watch([staticPath + '/js/app/**/*.js'], ['js']);
