@@ -125,6 +125,7 @@ ul {
   }
   .container {
     width: 73%;
+    max-width: 1240px;
   }
 }
 @media (max-width: 42em) {
@@ -134,6 +135,12 @@ ul {
     padding-right: 1rem;
     width: 50%;
   }
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }
 .vertical-align {
   width: 100%;
@@ -391,7 +398,7 @@ ul {
   padding-top: 2em;
 }
 .box h3 {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: normal;
   font-style: italic;
   width: 100%;
@@ -471,7 +478,6 @@ h3 {
   color: #fff;
 }
 .fromOrder-container {
-  width: 93%;
   float: left;
   padding: 0px 20px;
 }
@@ -483,9 +489,6 @@ h3 {
   width: 75px;
   display: inline-block;
   font-size: 1.1em;
-}
-.fromOrder .container {
-  width: 80%;
 }
 .fromOrder input[type="text"],
 .fromOrder input[type="email"] {
@@ -527,7 +530,6 @@ h3 {
 }
 @media (min-width: 992px) {
   .fromOrder-container {
-    width: 46%;
     float: left;
     padding: 0px 2%;
   }
@@ -541,11 +543,13 @@ h3 {
   background: #639;
   color: #fff;
   overflow: hidden;
+  margin-top: 40px;
 }
 .contact-info {
   float: left;
   width: 100%;
   text-align: center;
+  margin-top: 25px;
 }
 .contact-rs {
   float: left;
@@ -592,7 +596,7 @@ h3 {
   z-index: 6;
   position: relative;
   margin: 0 auto;
-  top: 50%;
+  top: 10%;
   margin-top: -200px;
   padding-top: 0px;
   overflow: initial;
@@ -612,4 +616,10 @@ h3 {
   font-size: 14px;
   cursor: pointer;
   top: -11px;
+}
+@media (min-width: 992px) {
+  .modalGalery-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
 }

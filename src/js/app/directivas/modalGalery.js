@@ -14,8 +14,12 @@
           modalGalery.hide();
         }
 
-        function openModal(){
+        function openModal(element){
+          var img = element.target;
+          console.log(element);
+          modalGalery.find(".modalGalery-body").html('').append($(img).clone());
           modalGalery.show();
+
         }
 
         btnClose.on('click',closeModal);

@@ -19,7 +19,7 @@
     z-index: 6;
     position: relative;
     margin: 0 auto;
-    top: 50%;
+    top: 10%;
     margin-top: -200px;
     padding-top: 0px;
     overflow: initial;
@@ -38,3 +38,8 @@
      font-size: 14px;
      cursor:pointer;
      top: -11px;
+
+  @media (min-width: $screen-tablet)
+    &-container
+      max-width: 500px;
+      margin: 0 auto;
