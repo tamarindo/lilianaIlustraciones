@@ -75,11 +75,16 @@ gulp.task('html', function() {
 	.pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task('static', function() {
+	gulp.src( staticPath + '/img/*' )
+	.pipe(gulp.dest( publicStaticPath + 'img/'))
+	.pipe(browserSync.reload({stream: true}));
+});
 
 /*
 * Browser Sync task
 */
-gulp.task('browser-sync', ['stylus','stylus-lanstatic', 'js', 'vendorjs','vendorcss','html'], function () {
+gulp.task('browser-sync', ['stylus','stylus-lanstatic', 'js', 'vendorjs','vendorcss','html','static'], function () {
   browserSync({
     server: {
       baseDir: index
@@ -96,6 +101,7 @@ gulp.task('watch', function() {
   gulp.watch([staticPath + '/js/ventor/**/*.js'], ['vendorjs']);
 	gulp.watch([staticPath + '/js/app/**/*.js'], ['js']);
 	gulp.watch([staticPath + '/**/*.html'], ['html']);
+	gulp.watch([staticPath + '/imagen/*'], ['static']);
 });
 
 gulp.task('default', [ 'browser-sync','watch' ]);
