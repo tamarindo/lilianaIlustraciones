@@ -71,7 +71,8 @@ gulp.task('stylus-lanstatic', function() {
 
 // Proceso de compilacion de archivos stylus
 gulp.task('html', function() {
-	gulp.src( staticPath + '/*.html' )
+	gulp.src( staticPath + '/html/*.html' )
+	.pipe(gulp.dest( publicStaticPath ))
 	.pipe(browserSync.reload({stream: true}));
 });
 
@@ -87,7 +88,7 @@ gulp.task('static', function() {
 gulp.task('browser-sync', ['stylus','stylus-lanstatic', 'js', 'vendorjs','vendorcss','html','static'], function () {
   browserSync({
     server: {
-      baseDir: index
+      baseDir: './src/public/'
     }
   });
 });
@@ -100,7 +101,7 @@ gulp.task('watch', function() {
 	gulp.watch([staticPath + '/css/**/*.css'], ['vendorcss']);
   gulp.watch([staticPath + '/js/ventor/**/*.js'], ['vendorjs']);
 	gulp.watch([staticPath + '/js/app/**/*.js'], ['js']);
-	gulp.watch([staticPath + '/**/*.html'], ['html']);
+	gulp.watch([staticPath + '/html/*.html'], ['html']);
 	gulp.watch([staticPath + '/imagen/*'], ['static']);
 });
 
